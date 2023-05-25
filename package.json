@@ -1,0 +1,21 @@
+{
+  "dependencies": {
+    "@uniswap/sdk-core": "^3.0.1",
+    "@uniswap/v3-sdk": "^3.8.2",
+    "@studydefi/money-legos": "^2.4.2",
+    "hardhat": "^2.14.0"
+  },
+  "devDependencies": {
+    "@aave/core-v3": "^1.17.2",
+    "@nomicfoundation/hardhat-toolbox": "^2.0.2",
+    "@openzeppelin/contracts": "^4.7.3",
+    "@types/chai": "^4.3.5",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.2.3",
+    "chai": "^4.3.7",
+    "dotenv": "^16.0.3",
+    "ts-node": "^10.9.1",
+    "typechain": "^8.1.1",
+    "typescript": "^5.0.4"
+  }
+}
