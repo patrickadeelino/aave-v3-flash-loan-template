@@ -29,7 +29,7 @@ describe("FlashLoan on Arbitrum", function () {
         await weth.transfer(flashLoan.address, ethers.utils.parseUnits('5', "ether"))
     })
 
-    describe.only("Basic Flashloan using AAVE V3", () => {
+    describe("Basic Flashloan using AAVE V3", () => {
         it('Borrows 100 WETH from Aave', async () => {
             const requestedAmount = ethers.utils.parseUnits('100', "ether")
             const tx = await flashLoan.requestFlashLoan(WETH, requestedAmount)
@@ -44,7 +44,7 @@ describe("FlashLoan on Arbitrum", function () {
             expect(receivedValue).to.equal(requestedAmount)
         })
 
-        it.only('Swaps WETH for DAI and borrows 200K DAI from Aave', async () => {
+        it('Swaps WETH for DAI and borrows 200K DAI from Aave', async () => {
             const poolAddress = '0xa961f0473da4864c5ed28e00fcc53a3aab056c1b'; // WETH/DAI - fee 0.3%
             const poolContract = await ethers.getContractAt(IUniswapV3PoolABI, poolAddress);
             const [token0, token1, fee] = await Promise.all([
