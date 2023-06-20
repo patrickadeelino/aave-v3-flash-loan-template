@@ -3,7 +3,7 @@ import { ethers } from "hardhat";
 async function main() {
     console.log('Init flash loan');
 
-    const flashLoan = await ethers.getContractAt('FlashLoan', '0xFf6974a7732d12499246056f3aCeF80051bB48f5');
+    const flashLoan = await ethers.getContractAt('FlashLoan', process.env.FLASH_LOAN_CONTRACT);
     console.log(`Contract fetched: ${flashLoan.address}`)
 
     const [account] = await ethers.getSigners();
@@ -14,7 +14,7 @@ async function main() {
     const tx = await flashLoan.requestFlashLoan(WETH, amount)
     const result = await tx.wait();
 
-    console.log('Flash loan executed successfully!', result)
+    console.log('Flash loan executed successfully!')
 }
 
 main().catch((error) => {
